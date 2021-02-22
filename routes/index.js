@@ -6,7 +6,7 @@ const db = require('../db/db');
 const users = db.users;
 
 router.get("/", check.checkAuthenticated, (req, res) => {
-    res.render('index.ejs', { name: req.user.name});
+    res.render('../public/views/index.ejs', { name: req.user.name});
 })
 
 module.exports = router;

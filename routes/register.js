@@ -7,7 +7,7 @@ const db = require('../db/db');
 const users = db.users;
 
 router.get("/", check.checkNotAuthenticated, (req, res) => {
-    res.render('register.ejs');
+    res.render('../public/views/register.ejs');
 })
 
 router.post('/', check.checkNotAuthenticated, async (req, res) => {

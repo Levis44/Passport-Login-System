@@ -8,12 +8,13 @@ const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
+const path = require('path');
 
 const login = require('./routes/login');
 const register = require('./routes/register');
 const logout = require('./routes/logout');
 const index = require('./routes/index');
-;
+
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
+app.use(express.static(path.join(__dirname, "public")));
 
 // ROUTES
 app.use('/', index)

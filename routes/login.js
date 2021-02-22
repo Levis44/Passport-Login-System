@@ -4,7 +4,7 @@ const router = express.Router();
 const check = require('./checkAuthentication/check');
 
 router.get("/", check.checkNotAuthenticated, (req, res) => {
-    res.render('login.ejs');
+    res.render('../public/views/login.ejs');
 })
 
 router.post("/", check.checkNotAuthenticated, passport.authenticate('local', {
